@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4FlvFrnpQRywpYxYFUh/A0x2+RGCvDzChx7e0m7yLYGkOHAqU7wz3wKRIkzL7i2YlJ7iCFvCC6j+6g8izTk1/g==",
+  "dgSpecHash": "ST38icACeKRvELwG9c+c2O6fdFV4iKQqxgbKS7o+rvm7xLLQ6mCufjNAlAdEG/19b9CC8hBl3lfmz8ffZ7BmKQ==",
   "success": true,
   "projectFilePath": "/Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/ConsiliaAPI.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "/Users/nickorlow/.nuget/packages/microsoft.net.http.headers/2.2.0/microsoft.net.http.headers.2.2.0.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
+    "/Users/nickorlow/.nuget/packages/npgsql/5.0.10/npgsql.5.0.10.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
@@ -23,7 +24,7 @@
     "/Users/nickorlow/.nuget/packages/system.buffers/4.5.0/system.buffers.4.5.0.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/system.componentmodel.annotations/4.5.0/system.componentmodel.annotations.4.5.0.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/system.memory/4.5.1/system.memory.4.5.1.nupkg.sha512",
-    "/Users/nickorlow/.nuget/packages/system.runtime.compilerservices.unsafe/4.5.1/system.runtime.compilerservices.unsafe.4.5.1.nupkg.sha512",
+    "/Users/nickorlow/.nuget/packages/system.runtime.compilerservices.unsafe/4.6.0/system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/system.text.json/5.0.2/system.text.json.5.0.2.nupkg.sha512"
   ],
