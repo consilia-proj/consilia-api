@@ -13,7 +13,17 @@ namespace ConsiliaAPI.Controllers
         [HttpPost]
         public async Task<User> CreateUser([FromBody] User u)
         {
-            return await Objects.User.CreateUser(u.FirstName, u.LastName, u.SSOKey);
+            return await Objects.User.CreateUser(u);
+        }
+        
+        [HttpPut]
+        [HttpPatch]
+        [Route("{uuid}")]
+        public async Task<User> UpdateUser(string uuid, [FromBody] User u)
+        {
+            User cuser = await Objects.User.GetUser(uuid);
+            await cuser.UpdateUser(u);
+            return cuser;
         }
         
         [HttpGet]
