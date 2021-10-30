@@ -113,6 +113,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Magick.NET-Q16-AnyCPU": {
+              "target": "Package",
+              "version": "[8.4.0, )"
+            },
+            "Magick.NET.Core": {
+              "target": "Package",
+              "version": "[8.4.0, )"
+            },
             "Npgsql": {
               "target": "Package",
               "version": "[5.0.10, )"
@@ -120,6 +128,14 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "nQuant": {
+              "target": "Package",
+              "version": "[1.0.3, )"
             }
           },
           "imports": [
