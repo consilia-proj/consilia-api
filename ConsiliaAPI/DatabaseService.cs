@@ -2,7 +2,7 @@ using Npgsql;
 
 namespace ConsiliaAPI
 {
-    public static class DatabaseService
+    public static class Database
     {
         private static readonly string PostgresUsername = "postgres";
         private static readonly string PostgresPassword = "Password123!";
@@ -19,5 +19,12 @@ namespace ConsiliaAPI
             ApplicationName = "consilia-api",
             Pooling = true
         };
+        
+        public static NpgsqlConnection DatabaseConnection = new NpgsqlConnection(PostgresConnectionString.ToString());
+
+        static Database()
+        {
+            DatabaseConnection.Open();
+        }
     }
 }
