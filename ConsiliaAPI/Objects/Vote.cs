@@ -12,6 +12,6 @@ namespace ConsiliaAPI.Objects
 
         public Guid VoteUUID { get; private set; }
 
-        public int VoteType { get;  set; }
+        public int voteType { get;  set; }
     }
 }
