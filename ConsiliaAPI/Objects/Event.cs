@@ -16,33 +16,26 @@ namespace ConsiliaAPI.Objects
         public double Range { get; set; }
         public string Type { get; set; }
 
-        public static async Task<Event> CreateEvent(string name, DateTime date, double lat, double longitude, double range, string type)
+        public static async Task<Event> CreateEvent(Event e)
         {
             try
             {
-                Event e = new Event();
                 // Generate User's details
                 e.EventID = Guid.NewGuid();
-                e.Name = name;
-                e.StartDate = date;
-                e.LocationLat = lat;
-                e.LocationLong = longitude;
-                e.Range = range;
-                e.Type = type;
 
                 // Insert them into database
                 NpgsqlConnection conn = Database.DatabaseConnection;
                 await using NpgsqlCommand command =
                     new NpgsqlCommand(
-                        $"INSERT INTO EVENTS(event_uuid, event_name, start_date_time, latitude, longitude, range, type) " +
-                        $"VALUES(\'{e.EventID}\', \'{e.Name}\', \'{e.StartDate}\', \'{e.LocationLat}\'), \'{e.LocationLong}\'), \'{e.Range}\', \'{e.Type}\'))", conn);
+                        $"INSERT INTO EVENTS (event_uuid, event_name, start_date_time, latitude, longitude, range, type) " +
+                        $"VALUES(\'{e.EventID}\', \'{e.Name}\', \'{e.StartDate}\', {e.LocationLat}, {e.LocationLong}, {e.Range}, \'{e.Type}\')", conn);
                 await command.ExecuteNonQueryAsync();
 
                 return e;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new ConvoyException("Unable to create event.", HttpStatusCode.InternalServerError, e.StackTrace);
+                throw new ConvoyException("Unable to create event.", HttpStatusCode.InternalServerError, ex.StackTrace);
             }
         }
 

@@ -4,13 +4,13 @@ namespace ConsiliaAPI.Objects
 {
     public class Vote
     {
-        public Guid placeUUID { get; private set; }
+        public Guid PlaceUUID { get; private set; }
 
         public Guid EventUUID { get; private set; }
 
-        public Guid userUUID { get; private set; }
+        public Guid UserUUID { get; private set; }
 
-        public Guid voteUUID { get; private set; }
+        public Guid VoteUUID { get; private set; }
 
         public int voteType { get;  set; }
     }
