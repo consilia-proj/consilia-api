@@ -1,3 +1,6 @@
+using System;
+using System.Threading.Tasks;
+
 namespace ConsiliaAPI.Objects
 {
     public class User
@@ -8,6 +11,6 @@ namespace ConsiliaAPI.Objects
         public string profilePic { get; private set; }
         public Guid UserUID { get; private set; }
 
-
+        
     }
 }

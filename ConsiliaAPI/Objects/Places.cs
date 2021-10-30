@@ -1,4 +1,6 @@
-﻿namespace ConsiliaAPI.Objects
+﻿using System;
+
+namespace ConsiliaAPI.Objects
 {
     public class Places
     {

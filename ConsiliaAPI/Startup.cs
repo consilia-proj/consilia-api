@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Convoy.ErrorHandling;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -46,6 +47,15 @@ namespace ConsiliaAPI
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            // Enable Convoy error handling
+            app.UseConvoyErrorHandlingMiddleware(new ConvoyErrorHandlingMiddlewareOptions()
+            {
+                ErrorLoggingFunction = ErrorReporter.LogErrorAsync,
+                LogAllErrors = true, 
+                LogInternalServerErrors = true
+            });
+
 
             app.UseAuthorization();
 
