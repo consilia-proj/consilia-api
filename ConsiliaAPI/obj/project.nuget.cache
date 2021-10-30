@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "ST38icACeKRvELwG9c+c2O6fdFV4iKQqxgbKS7o+rvm7xLLQ6mCufjNAlAdEG/19b9CC8hBl3lfmz8ffZ7BmKQ==",
+  "dgSpecHash": "otHwbsspfmezJdEHw40m/7MjJ1ikU9L/A21kryyHlmvdVdnzp1Ap35Jr26zjWqikvstjYnWsrfn8sg6rEjYjGQ==",
   "success": true,
   "projectFilePath": "/Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/ConsiliaAPI.csproj",
   "expectedPackageFiles": [
+    "/Users/nickorlow/.nuget/packages/magick.net-q16-anycpu/8.4.0/magick.net-q16-anycpu.8.4.0.nupkg.sha512",
+    "/Users/nickorlow/.nuget/packages/magick.net.core/8.4.0/magick.net.core.8.4.0.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/microsoft.aspnetcore.http/2.2.2/microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.2.0/microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/microsoft.aspnetcore.http.features/2.2.0/microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
@@ -14,19 +16,34 @@
     "/Users/nickorlow/.nuget/packages/microsoft.extensions.options/2.2.0/microsoft.extensions.options.2.2.0.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/microsoft.extensions.primitives/2.2.0/microsoft.extensions.primitives.2.2.0.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/microsoft.net.http.headers/2.2.0/microsoft.net.http.headers.2.2.0.nupkg.sha512",
+    "/Users/nickorlow/.nuget/packages/microsoft.netcore.platforms/5.0.0/microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/nickorlow/.nuget/packages/microsoft.win32.systemevents/5.0.0/microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/npgsql/5.0.10/npgsql.5.0.10.nupkg.sha512",
+    "/Users/nickorlow/.nuget/packages/nquant/1.0.3/nquant.1.0.3.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/swashbuckle.aspnetcore/5.6.3/swashbuckle.aspnetcore.5.6.3.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/swashbuckle.aspnetcore.swagger/5.6.3/swashbuckle.aspnetcore.swagger.5.6.3.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/swashbuckle.aspnetcore.swaggergen/5.6.3/swashbuckle.aspnetcore.swaggergen.5.6.3.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/swashbuckle.aspnetcore.swaggerui/5.6.3/swashbuckle.aspnetcore.swaggerui.5.6.3.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/system.buffers/4.5.0/system.buffers.4.5.0.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/system.componentmodel.annotations/4.5.0/system.componentmodel.annotations.4.5.0.nupkg.sha512",
+    "/Users/nickorlow/.nuget/packages/system.drawing.common/5.0.2/system.drawing.common.5.0.2.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/system.memory/4.5.1/system.memory.4.5.1.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/system.runtime.compilerservices.unsafe/4.6.0/system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512",
     "/Users/nickorlow/.nuget/packages/system.text.json/5.0.2/system.text.json.5.0.2.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'nQuant 1.0.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net5.0'. This package may not be fully compatible with your project.",
+      "libraryId": "nQuant",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

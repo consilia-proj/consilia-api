@@ -31,7 +31,7 @@ namespace ConsiliaAPI.Objects
 
                 // Insert them into database
                 NpgsqlConnection conn = Database.DatabaseConnection;
-                using NpgsqlCommand command =
+                await using NpgsqlCommand command =
                     new NpgsqlCommand(
                         $"INSERT INTO USERS(user_uuid, first_name, last_name, sso_key) " +
                         $"VALUES(\'{u.UserUUID}\', \'{u.FirstName}\', \'{u.LastName}\', \'{u.SSOKey}\')", conn);
@@ -55,18 +55,30 @@ namespace ConsiliaAPI.Objects
                 // Insert them into database
                 NpgsqlConnection conn = Database.DatabaseConnection;
                 
-                    using NpgsqlCommand command =
-                        new NpgsqlCommand(
-                            $"UPDATE USERS SET first_name='{FirstName}', last_name='{LastName}' WHERE user_uuid='{UserUUID}'",
-                            conn);
-                    await command.ExecuteNonQueryAsync();
+                await using NpgsqlCommand command = new NpgsqlCommand($"UPDATE USERS SET first_name='{FirstName}', last_name='{LastName}' WHERE user_uuid='{UserUUID}'", conn);
+                await command.ExecuteNonQueryAsync();
 
-                    return u;
-                
-             }
+                return u;
+            }
             catch (Exception e)
             {
                 throw new ConvoyException("Unable to update user.", HttpStatusCode.InternalServerError, e.StackTrace);
+            }
+        }
+        
+        public async Task UpdateProfilePicture(string s)
+        {
+            try
+            {
+                // Insert them into database
+                NpgsqlConnection conn = Database.DatabaseConnection;
+                
+                await using NpgsqlCommand command = new NpgsqlCommand($"UPDATE USERS SET profile_picture='{s}' WHERE user_uuid='{UserUUID}'", conn);
+                await command.ExecuteNonQueryAsync();
+            }
+            catch (Exception e)
+            {
+                throw new ConvoyException("Unable to update profile picture.", HttpStatusCode.InternalServerError, e.StackTrace);
             }
         }
         
@@ -76,10 +88,10 @@ namespace ConsiliaAPI.Objects
             {
                 // Insert them into database
                 NpgsqlConnection conn = Database.DatabaseConnection;
-                using NpgsqlCommand command =
+                await using NpgsqlCommand command =
                     new NpgsqlCommand(
                         $"SELECT * FROM USERS WHERE user_uuid='{uuid}'", conn);
-                using  NpgsqlDataReader reader = await command.ExecuteReaderAsync();
+                await using  NpgsqlDataReader reader = await command.ExecuteReaderAsync();
 
                 if (reader.Read())
                 {
@@ -102,6 +114,14 @@ namespace ConsiliaAPI.Objects
             catch (Exception e)
             {
                 throw new ConvoyException("Unable to get user.", HttpStatusCode.InternalServerError, e.StackTrace);
+            }
+        }
+
+        public async Task ValidateSSOKey(string ssoKey)
+        {
+            if (SSOKey != ssoKey)
+            {
+                throw new ConvoyException("Invalid SSO Key", HttpStatusCode.Unauthorized);
             }
         }
     }

@@ -31,3 +31,14 @@
 /Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/obj/Debug/net5.0/ref/ConsiliaAPI.dll
 /Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/obj/Debug/net5.0/ConsiliaAPI.pdb
 /Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/obj/Debug/net5.0/ConsiliaAPI.genruntimeconfig.cache
+/Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/bin/Debug/net5.0/Magick.NET-Q16-AnyCPU.dll
+/Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/bin/Debug/net5.0/Magick.NET.Core.dll
+/Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/bin/Debug/net5.0/nQuant.Core.dll
+/Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/bin/Debug/net5.0/System.Drawing.Common.dll
+/Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/bin/Debug/net5.0/runtimes/linux-musl-x64/native/Magick.Native-Q16-x64.dll.so
+/Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/bin/Debug/net5.0/runtimes/linux-x64/native/Magick.Native-Q16-x64.dll.so
+/Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/bin/Debug/net5.0/runtimes/osx-x64/native/Magick.Native-Q16-x64.dll.dylib
+/Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/bin/Debug/net5.0/runtimes/win-x64/native/Magick.Native-Q16-x64.dll
+/Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/bin/Debug/net5.0/runtimes/win-x86/native/Magick.Native-Q16-x86.dll
+/Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/bin/Debug/net5.0/runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll
+/Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/bin/Debug/net5.0/runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll
