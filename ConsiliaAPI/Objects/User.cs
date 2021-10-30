@@ -43,5 +43,40 @@ namespace ConsiliaAPI.Objects
                 throw new ConvoyException("Unable to create user.", HttpStatusCode.InternalServerError, e.StackTrace);
             }
         }
+        
+        public static async Task<User> GetUser(string uuid)
+        {
+            try
+            {
+                // Insert them into database
+                NpgsqlConnection conn = Database.DatabaseConnection;
+                NpgsqlCommand command =
+                    new NpgsqlCommand(
+                        $"SELECT * FROM USERS WHERE user_uuid='{uuid}'", conn);
+                NpgsqlDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.Read())
+                {
+                    User u = new User();
+                    u.FirstName =  (string) reader["first_name"];
+                    u.LastName = (string) reader["last_name"];
+                    u.ProfilePic =  reader["profile_picture"].ToString();
+                    u.UserUUID =  (Guid) reader["user_uuid"];
+                    return u;
+                }
+                else
+                {
+                    throw new ConvoyException("User does not exist", HttpStatusCode.NotFound);
+                }
+            }
+            catch (ConvoyException e)
+            {
+                throw;
+            }
+            catch (Exception e)
+            {
+                throw new ConvoyException("Unable to get user.", HttpStatusCode.InternalServerError, e.StackTrace);
+            }
+        }
     }
 }

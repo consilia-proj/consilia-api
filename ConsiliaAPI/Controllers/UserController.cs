@@ -15,5 +15,12 @@ namespace ConsiliaAPI.Controllers
         {
             return await Objects.User.CreateUser(u.FirstName, u.LastName, u.SSOKey);
         }
+        
+        [HttpGet]
+        [Route("{userUUID}")]
+        public async Task<User> GetUser(string userUUID)
+        {
+            return await Objects.User.GetUser(userUUID);
+        }
     }
 }
