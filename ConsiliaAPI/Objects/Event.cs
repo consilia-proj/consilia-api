@@ -1,4 +1,8 @@
 using System;
+using System.Net;
+using System.Threading.Tasks;
+using Convoy.ErrorHandling;
+using Npgsql;
 
 namespace ConsiliaAPI.Objects
 {
@@ -12,7 +16,7 @@ namespace ConsiliaAPI.Objects
         public double Range { get; set; }
         public string Type { get; set; }
 
-        public static async Task<User> CreateEvent(string name, DateTime date, double lat, double longitude, double range, double type)
+        public static async Task<Event> CreateEvent(string name, DateTime date, double lat, double longitude, double range, string type)
         {
             try
             {
@@ -28,7 +32,7 @@ namespace ConsiliaAPI.Objects
 
                 // Insert them into database
                 NpgsqlConnection conn = Database.DatabaseConnection;
-                NpgsqlCommand command =
+                await using NpgsqlCommand command =
                     new NpgsqlCommand(
                         $"INSERT INTO EVENTS(event_uuid, event_name, start_date_time, latitude, longitude, range, type) " +
                         $"VALUES(\'{e.EventID}\', \'{e.Name}\', \'{e.StartDate}\', \'{e.LocationLat}\'), \'{e.LocationLong}\'), \'{e.Range}\', \'{e.Type}\'))", conn);
