@@ -16,6 +16,8 @@ namespace ConsiliaAPI.Objects
         public Guid EventID { get; set; }
 
         public decimal Rating { get; set; }
+        
+        public int Cost { get; set; }
 
         public string Name { get; set; }
 
@@ -42,6 +44,7 @@ namespace ConsiliaAPI.Objects
             
             Name = jobj["result"]["name"].ToString();
             Rating = decimal.Parse((jobj["result"]["rating"] ?? "-1").ToString());
+            Cost = int.Parse((jobj["result"]["price_level"] ?? "-1").ToString());
             GooglePlaceId = jobj["result"]["place_id"].ToString();
             Description = "A Cool Place!";
             EventID = EventID;
