@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using ConsiliaAPI.Objects;
 using Microsoft.AspNetCore.Mvc;
@@ -35,6 +36,15 @@ namespace ConsiliaAPI.Controllers
             Event e = await Event.GetEvent(eventId);
             await e.CastVote(u, vote, placeUUID);
             return vote;
+        }
+        
+        [HttpGet]
+        [Route("{eventId}/votes")]
+        public async Task<List<Places>> GetRanked(string eventId)
+        {
+            Event e = await Event.GetEvent(eventId);
+            List<Places> places = await e.GetPlaces();
+            return places.OrderByDescending(x => x.Points).ToList();
         }
         
     }

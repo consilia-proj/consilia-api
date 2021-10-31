@@ -62,9 +62,10 @@ namespace ConsiliaAPI.Objects
 
         public async Task<List<Places>> GetPlaces()
         {
+            List<Places> placesList = new List<Places>();
             try
             {
-                List<Places> placesList = new List<Places>();
+               
                 // Generate User's details
 
                 // Insert them into database
@@ -81,16 +82,23 @@ namespace ConsiliaAPI.Objects
                         EventID = (Guid) reader["event_uuid"],
                         GooglePlaceId = (string) reader["google_place_id"],
                     };
-                    await p.Prepare();
+                   
                     placesList.Add(p);
                 }
                 
-                return placesList;
+                
             }
             catch (Exception ex)
             {
                 throw new ConvoyException("Unable to get places.", HttpStatusCode.InternalServerError, ex.StackTrace);
             }
+
+            foreach (var p in placesList)
+            {
+                await p.Prepare();
+            }
+
+            return placesList;
         }
 
         public static async Task<Event> CreateEvent(Event e)
