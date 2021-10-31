@@ -34,7 +34,7 @@ namespace ConsiliaAPI.Objects
                 while (reader.Read())
                 {
                     Vote u = new Vote();
-                    u.VoteType =  (int) reader["vote_type"];
+                    u.VoteType = (int) Convert.ToInt32((Int64) reader["vote_type"]);
                     u.EventUUID =  (Guid) reader["event_uuid"];
                     u.VoteUUID = (Guid) reader["vote_uuid"];
                     u.UserUUID =  (Guid) reader["user_uuid"];

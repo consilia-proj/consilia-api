@@ -12,9 +12,6 @@
 /Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
-/Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/bin/Debug/net5.0/System.Text.Json.dll
-/Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/bin/Debug/net5.0/Convoy.ErrorHandling.dll
-/Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/bin/Debug/net5.0/Convoy.ErrorHandling.pdb
 /Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/obj/Debug/net5.0/ConsiliaAPI.csprojAssemblyReference.cache
 /Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/obj/Debug/net5.0/ConsiliaAPI.GeneratedMSBuildEditorConfig.editorconfig
 /Users/nickorlow/github-move/ConsiliaAPI/ConsiliaAPI/obj/Debug/net5.0/ConsiliaAPI.AssemblyInfoInputs.cache

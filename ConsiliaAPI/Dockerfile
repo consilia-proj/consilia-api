@@ -3,10 +3,12 @@ WORKDIR /app
 
 # Copy csproj and restore as distinct layers
 COPY *.csproj ./
+COPY root.crt ./
 RUN dotnet restore
 
 # Copy everything else and build
 COPY . ./
+COPY root.crt ./
 RUN dotnet publish -c Release -o out
 
 # Build runtime image
@@ -15,6 +17,7 @@ WORKDIR /app
 COPY --from=build-env /app/out .
 EXPOSE 80
 ENV ASPNETCORE_URLS=http://*:80
+COPY root.crt ./
 
 # Development Version 
 # ARG COMMIT_HASH_ARG
@@ -27,5 +30,6 @@ ENV ASPNETCORE_URLS=http://*:80
 RUN apt-get update
 RUN apt-get -y install libgdiplus
 RUN apt-get -qq -y install libgdiplus
-
+RUN ls
+RUN ls -r
 ENTRYPOINT ["dotnet", "ConsiliaAPI.dll"]

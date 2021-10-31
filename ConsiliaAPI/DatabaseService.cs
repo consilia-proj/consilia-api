@@ -4,10 +4,10 @@ namespace ConsiliaAPI
 {
     public static class Database
     {
-        private static readonly string PostgresUsername = "postgres";
-        private static readonly string PostgresPassword = "Password123!";
-        private static readonly string PostgresDatabaseName = "consilia-dev";
-        private static readonly string PostgresAddress = "34.132.192.247";
+        private static readonly string PostgresUsername = "nicholas";//"postgres";
+        private static readonly string PostgresPassword = "TwelveCharPass12!";// "Password123!";
+        private static readonly string PostgresDatabaseName = "meaty-cougar-4640.defaultdb";
+        private static readonly string PostgresAddress = "free-tier.gcp-us-central1.cockroachlabs.cloud"; //"34.132.192.247";
         
         private static NpgsqlConnectionStringBuilder PostgresConnectionString = new NpgsqlConnectionStringBuilder()
         {
@@ -15,6 +15,9 @@ namespace ConsiliaAPI
             Username = PostgresUsername,
             Password = PostgresPassword,
             Host = PostgresAddress,
+            Port = 26257,
+            SslMode = SslMode.Require,
+            RootCertificate = "./root.crt",
             MinPoolSize = 5,
             ApplicationName = "consilia-api",
             Pooling = true
