@@ -97,6 +97,7 @@ namespace ConsiliaAPI.Objects
                 {
                     User u = new User();
                     u.FirstName =  (string) reader["first_name"];
+                    u.SSOKey =  (string) reader["sso_key"];
                     u.LastName = (string) reader["last_name"];
                     u.ProfilePic =  reader["profile_picture"].ToString();
                     u.UserUUID =  (Guid) reader["user_uuid"];

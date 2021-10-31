@@ -163,69 +163,31 @@ namespace ConsiliaAPI.Objects
             // data processing here
             
         }
-
-
-        public async Task<> CastVote(User user, Vote vote, Places place)
+        
+        public async Task CastVote(User user, Vote vote, string placeuuid)
         {
+            vote.VoteUUID = Guid.NewGuid();
+            vote.UserUUID = user.UserUUID;
+            vote.EventUUID = EventID;
+            vote.EventUUID = Guid.Parse(placeuuid);
             try
             {
                 // Insert them into database
                 NpgsqlConnection conn = Database.DatabaseConnection;
                 NpgsqlCommand command =
                     new NpgsqlCommand(
-                        $"INSERT VOTE(event_uuid, , user_uuid, place_uuid, vote_uuid, vote_type) " +
-                        $"VALUES\'{this.EventID}\', \'{user.uuid}\', \'{place.placeID}\', \'{vote.VoteID}\', \'{vote.Type}\')", conn);
+                        $"INSERT INTO VOTES(event_uuid, user_uuid, place_uuid, vote_uuid, vote_type) " +
+                        $"VALUES(\'{EventID}\', \'{user.UserUUID}\', \'{placeuuid}\', \'{vote.VoteUUID}\', \'{vote.VoteType}\')", conn);
                 await command.ExecuteNonQueryAsync();
-
-                return u;
+            }
+            catch (NpgsqlException e)
+            {
+                if(!e.Message.Contains("duplicate key"))
+                    throw new ConvoyException("Unable to cast vote.", HttpStatusCode.InternalServerError, e.StackTrace);
             }
             catch (Exception e)
             {
-                throw new ConvoyException("Unable to add vote.", HttpStatusCode.InternalServerError, e.StackTrace);
-            }
-        }
-
-        public async Task<Event> get(string uuid)
-        {
-            try
-            {
-                // Insert them into database
-                NpgsqlConnection conn = Database.DatabaseConnection;
-                NpgsqlCommand command =
-                    new NpgsqlCommand(
-                        $"SELECT * FROM EVENTS WHERE event_uuid='{uuid}'", conn);
-                NpgsqlDataReader reader = await command.ExecuteReaderAsync();
-
-                if (reader.Read())
-                {
-                    Event e = new Event();
-                    e.EventID = (string)reader["event_uuid"];
-                    e.Name = (string)reader["event_name"];
-                    e.StartDate = (string)reader["start_date_time"];
-                    e.LocationLat = (string)reader["latitude"];
-                    e.LocationLong = (string)reader["longitude"];
-                    e.Range = (string)reader["range"];
-                    e.Type = (string)reader["type"];
-                    /**
-                     * reference
-                    e.LastName = (string)reader["last_name"];
-                    e.ProfilePic = reader["profile_picture"].ToString();
-                    e.UserUUID = (Guid)reader["user_uuid"];
-                    **/
-                    return e;
-                }
-                else
-                {
-                    throw new ConvoyException("Event does not exist", HttpStatusCode.NotFound);
-                }
-            }
-            catch (ConvoyException e)
-            {
-                throw;
-            }
-            catch (Exception e)
-            {
-                throw new ConvoyException("Unable to get event.", HttpStatusCode.InternalServerError, e.StackTrace);
+                throw new ConvoyException("Unable to cast vote.", HttpStatusCode.InternalServerError, e.StackTrace);
             }
         }
     }
