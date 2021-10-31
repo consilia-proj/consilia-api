@@ -29,7 +29,7 @@ namespace ConsiliaAPI.Controllers
         [HttpPut]
         [HttpPatch]
         [Route("{uuid}/profile-picture")]
-        public async Task<User> UpdatProfilePicture(string uuid, [FromBody] ProfilePictureUpdateRequest pfp)
+        public async Task<User> UpdateProfilePicture(string uuid, [FromBody] ProfilePictureUpdateRequest pfp)
         {
             User cuser = await Objects.User.GetUser(uuid);
             await cuser.UpdateProfilePicture(await pfp.OptimizedImage());

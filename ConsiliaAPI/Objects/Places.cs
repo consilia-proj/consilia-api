@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
-using GooglePlacesApi.Models;
+using Convoy.ErrorHandling;
 using Newtonsoft.Json.Linq;
+using Npgsql;
 
 namespace ConsiliaAPI.Objects
 {
@@ -22,6 +24,9 @@ namespace ConsiliaAPI.Objects
         public decimal Latitude { get; set; }
         public string ImageURL { get; set; }
         public string GooglePlaceId { get; set; }
+
+        public int Points { get; set; }
+    
 
         public async Task Prepare()
         {
@@ -43,7 +48,8 @@ namespace ConsiliaAPI.Objects
             ImageURL = imgurl;
             Latitude = decimal.Parse(jobj["result"]["geometry"]["location"]["lat"].ToString());
             Longitude = decimal.Parse(jobj["result"]["geometry"]["location"]["lng"].ToString());
-            PlaceID = Guid.NewGuid();
+            
+            Points = await GetVotes();
         }
 
         private static string FileGetContents(string fileName)
@@ -71,6 +77,53 @@ namespace ConsiliaAPI.Objects
             }
 
             return sContents;
+        }
+
+        public async Task<int> GetVotes()
+        {
+            List<Vote> pla = await Vote.GetVotesByPlace(PlaceID.ToString());
+            return pla.Sum(x => x.VoteType);
+        }
+        
+        public static async Task<Places> GetPlace(string placeuuid)
+        {
+            Places p;
+            try
+            {
+               
+                // Insert them into database
+                NpgsqlConnection conn = Database.DatabaseConnection;
+                await using NpgsqlCommand command =
+                    new NpgsqlCommand(
+                        $"SELECT * FROM PLACES WHERE place_uuid='{placeuuid}'", conn);
+                await using  NpgsqlDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.Read())
+                {
+                    p = new Places()
+                    {
+                        PlaceID = (Guid) reader["place_uuid"],
+                        EventID = (Guid) reader["event_uuid"],
+                        GooglePlaceId = (string) reader["google_place_id"],
+                    };
+                   
+                }
+                else
+                {
+                    throw new ConvoyException("Vote does not exist", HttpStatusCode.NotFound);
+                }
+            }
+            catch (ConvoyException e)
+            {
+                throw;
+            }
+            catch (Exception e)
+            {
+                throw new ConvoyException("Unable to get vote.", HttpStatusCode.InternalServerError, e.StackTrace);
+            }
+            
+            await p.Prepare();
+            return p;
         }
     }
 }

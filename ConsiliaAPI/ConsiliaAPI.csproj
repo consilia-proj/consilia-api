@@ -13,9 +13,6 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
         <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
     </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\..\..\Downloads\convoy-main\Convoy.ErrorHandling\Convoy.ErrorHandling.csproj" />
-    </ItemGroup>
+    
 
 </Project>
