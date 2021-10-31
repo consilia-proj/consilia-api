@@ -113,6 +113,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "GooglePlacesApi": {
+              "target": "Package",
+              "version": "[1.0.17, )"
+            },
             "Magick.NET-Q16-AnyCPU": {
               "target": "Package",
               "version": "[8.4.0, )"
