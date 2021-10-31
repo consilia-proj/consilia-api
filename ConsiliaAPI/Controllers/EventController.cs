@@ -18,10 +18,18 @@ namespace ConsiliaAPI.Controllers
         
         [HttpGet]
         [Route("{eventId}")]
-        public async Task<List<Places>> GetPlaces(string eventId)
+        public async Task<Event> GetEvent(string eventId)
         {
             Event e = await Event.GetEvent(eventId);
-            return await e.GetPlaces();
+            return e;
+        }
+        
+        [HttpGet]
+        [Route("{eventId}/places")]
+        public async Task<Event> GetPlaces(string eventId)
+        {
+            Event e = await Event.GetEvent(eventId);
+            return e;
         }
         
         [HttpPost]
