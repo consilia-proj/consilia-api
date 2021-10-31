@@ -5,7 +5,6 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Convoy.ErrorHandling;
-using GooglePlacesApi.Models;
 using Newtonsoft.Json.Linq;
 using Npgsql;
 

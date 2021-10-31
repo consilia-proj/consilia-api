@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsiliaAPI", "ConsiliaAPI\ConsiliaAPI.csproj", "{282D1B42-BDE1-4427-8A3D-43C784B760E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Convoy.ErrorHandling", "..\..\Downloads\convoy-main\Convoy.ErrorHandling\Convoy.ErrorHandling.csproj", "{870A016C-20BE-4E1D-81EE-9BC9DF6D2519}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Convoy.ErrorHandling", "Convoy.ErrorHandling\Convoy.ErrorHandling.csproj", "{B62B16F3-7EC1-4F80-922B-07447803992B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,9 +14,9 @@ Global
 		{282D1B42-BDE1-4427-8A3D-43C784B760E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{282D1B42-BDE1-4427-8A3D-43C784B760E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{282D1B42-BDE1-4427-8A3D-43C784B760E2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{870A016C-20BE-4E1D-81EE-9BC9DF6D2519}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{870A016C-20BE-4E1D-81EE-9BC9DF6D2519}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{870A016C-20BE-4E1D-81EE-9BC9DF6D2519}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{870A016C-20BE-4E1D-81EE-9BC9DF6D2519}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B62B16F3-7EC1-4F80-922B-07447803992B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B62B16F3-7EC1-4F80-922B-07447803992B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B62B16F3-7EC1-4F80-922B-07447803992B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B62B16F3-7EC1-4F80-922B-07447803992B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

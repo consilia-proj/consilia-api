@@ -5542,8 +5542,8 @@
     },
     "Convoy.ErrorHandling/1.0.0": {
       "type": "project",
-      "path": "../../../Downloads/convoy-main/Convoy.ErrorHandling/Convoy.ErrorHandling.csproj",
-      "msbuildProject": "../../../Downloads/convoy-main/Convoy.ErrorHandling/Convoy.ErrorHandling.csproj"
+      "path": "../Convoy.ErrorHandling/Convoy.ErrorHandling.csproj",
+      "msbuildProject": "../Convoy.ErrorHandling/Convoy.ErrorHandling.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5585,8 +5585,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/Users/nickorlow/Downloads/convoy-main/Convoy.ErrorHandling/Convoy.ErrorHandling.csproj": {
-              "projectPath": "/Users/nickorlow/Downloads/convoy-main/Convoy.ErrorHandling/Convoy.ErrorHandling.csproj"
+            "/Users/nickorlow/github-move/ConsiliaAPI/Convoy.ErrorHandling/Convoy.ErrorHandling.csproj": {
+              "projectPath": "/Users/nickorlow/github-move/ConsiliaAPI/Convoy.ErrorHandling/Convoy.ErrorHandling.csproj"
             }
           }
         }

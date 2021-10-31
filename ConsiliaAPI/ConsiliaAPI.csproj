@@ -15,7 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\Downloads\convoy-main\Convoy.ErrorHandling\Convoy.ErrorHandling.csproj" />
+      <ProjectReference Include="..\Convoy.ErrorHandling\Convoy.ErrorHandling.csproj" />
     </ItemGroup>
 
 </Project>

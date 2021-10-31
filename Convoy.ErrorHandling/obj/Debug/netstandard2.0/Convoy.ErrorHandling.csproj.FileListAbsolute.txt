@@ -1,0 +1,9 @@
+/Users/nickorlow/Downloads/convoy-main/Convoy.ErrorHandling/bin/Debug/netstandard2.0/Convoy.ErrorHandling.deps.json
+/Users/nickorlow/Downloads/convoy-main/Convoy.ErrorHandling/bin/Debug/netstandard2.0/Convoy.ErrorHandling.dll
+/Users/nickorlow/Downloads/convoy-main/Convoy.ErrorHandling/bin/Debug/netstandard2.0/Convoy.ErrorHandling.pdb
+/Users/nickorlow/Downloads/convoy-main/Convoy.ErrorHandling/obj/Debug/netstandard2.0/Convoy.ErrorHandling.csprojAssemblyReference.cache
+/Users/nickorlow/Downloads/convoy-main/Convoy.ErrorHandling/obj/Debug/netstandard2.0/Convoy.ErrorHandling.AssemblyInfoInputs.cache
+/Users/nickorlow/Downloads/convoy-main/Convoy.ErrorHandling/obj/Debug/netstandard2.0/Convoy.ErrorHandling.AssemblyInfo.cs
+/Users/nickorlow/Downloads/convoy-main/Convoy.ErrorHandling/obj/Debug/netstandard2.0/Convoy.ErrorHandling.csproj.CoreCompileInputs.cache
+/Users/nickorlow/Downloads/convoy-main/Convoy.ErrorHandling/obj/Debug/netstandard2.0/Convoy.ErrorHandling.dll
+/Users/nickorlow/Downloads/convoy-main/Convoy.ErrorHandling/obj/Debug/netstandard2.0/Convoy.ErrorHandling.pdb
