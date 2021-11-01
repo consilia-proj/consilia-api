@@ -42,5 +42,12 @@ jobs:
         with:
           context: ./ConsiliaAPI
           push: true
+          build-args: |
+            DB_USERNAME_ARG=${{ secrets.DB_USERNAME }}
+            DB_PASSWORD_ARG=${{ secrets.DB_PASSWORD }}
+            DB_PORT_ARG=${{ secrets.PORT }}
+            DB_ADDRESS_ARG=${{ secrets.ADDRESS }}
+            DB_NAME_ARG=${{ secrets.NAME }}
+            GMAPS_API_KEY_ARG=${{ secrets.GMAPS_KEY }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
