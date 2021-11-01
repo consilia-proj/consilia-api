@@ -1,13 +1,17 @@
+using System;
 using Npgsql;
 
 namespace ConsiliaAPI
 {
     public static class Database
     {
-        private static readonly string PostgresUsername = "nicholas";//"postgres";
-        private static readonly string PostgresPassword = "TwelveCharPass12!";// "Password123!";
-        private static readonly string PostgresDatabaseName = "meaty-cougar-4640.defaultdb";
-        private static readonly string PostgresAddress = "free-tier.gcp-us-central1.cockroachlabs.cloud"; //"34.132.192.247";
+        // Variables were directly-defined in source previously in order to get us running faster
+        // (this was made for a hackathon) vars have now been changed.
+        private static readonly string PostgresUsername = Environment.GetEnvironmentVariable("DB_USERNAME");
+        private static readonly string PostgresPassword = Environment.GetEnvironmentVariable("DB_PASSWORD");
+        private static readonly string PostgresDatabaseName = Environment.GetEnvironmentVariable("DB_NAME");
+        private static readonly string PostgresAddress = Environment.GetEnvironmentVariable("DB_ADDRESS");
+        private static readonly int PostgresPort = int.Parse(Environment.GetEnvironmentVariable("DB_PORT"));
         
         private static NpgsqlConnectionStringBuilder PostgresConnectionString = new NpgsqlConnectionStringBuilder()
         {
@@ -15,7 +19,7 @@ namespace ConsiliaAPI
             Username = PostgresUsername,
             Password = PostgresPassword,
             Host = PostgresAddress,
-            Port = 26257,
+            Port = PostgresPort,
             SslMode = SslMode.Require,
             RootCertificate = "./root.crt",
             MinPoolSize = 5,

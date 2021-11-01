@@ -40,6 +40,7 @@ namespace ConsiliaAPI.Objects
 
 
             string imgurl = (jobj["result"]?["photos"]?[0]?["photo_reference"] ?? "").ToString();
+            
             imgurl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=" + imgurl+$"&key={GlobalConstants.GOOGLE_MAPS_API_KEY}";
             
             Name = jobj["result"]["name"].ToString();

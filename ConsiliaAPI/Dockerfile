@@ -19,17 +19,25 @@ EXPOSE 80
 ENV ASPNETCORE_URLS=http://*:80
 COPY root.crt ./
 
-# Development Version 
-# ARG COMMIT_HASH_ARG
-# ARG BRANCH_ARG
+# Get env vars from docker args
+ARG DB_USERNAME_ARG
+ARG DB_PASSWORD_ARG
+ARG DB_ADDRESS_ARG
+ARG DB_PORT_ARG
+ARG DB_NAME_ARG
+ARG GMAPS_API_KEY_ARG
 
 # Set environment variables
-# ENV COMMIT_HASH=$COMMIT_HASH_ARG
-# ENV BRANCH=$BRANCH_ARG
+ENV DB_USERNAME=$DB_USERNAME_ARG
+ENV DB_PASSWORD=$DB_PASSWORD_ARG
+ENV DB_ADDRESS=$DB_ADDRESS_ARG
+ENV DB_PORT=$DB_PORT_ARG
+ENV DB_NAME=$DB_NAME_ARG
+ENV GMAPS_API_KEY=$GMAPS_API_KEY_ARG
 
+# Needed for pfp functionality
 RUN apt-get update
 RUN apt-get -y install libgdiplus
 RUN apt-get -qq -y install libgdiplus
-RUN ls
-RUN ls -r
+
 ENTRYPOINT ["dotnet", "ConsiliaAPI.dll"]
