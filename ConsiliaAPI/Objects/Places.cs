@@ -41,6 +41,8 @@ namespace ConsiliaAPI.Objects
 
             string imgurl = (jobj["result"]?["photos"]?[0]?["photo_reference"] ?? "").ToString();
             
+            // exposing our key to clients, oh well (this is a free-tier key so not much to be gained from stealing it)
+            // in future, could embed this into the app or use some oauth like thing to generate temp keys
             imgurl = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photo_reference=" + imgurl+$"&key={GlobalConstants.GOOGLE_MAPS_API_KEY}";
             
             Name = jobj["result"]["name"].ToString();
