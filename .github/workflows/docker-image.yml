@@ -45,9 +45,9 @@ jobs:
           build-args: |
             DB_USERNAME_ARG=${{ secrets.DB_USERNAME }}
             DB_PASSWORD_ARG=${{ secrets.DB_PASSWORD }}
-            DB_PORT_ARG=${{ secrets.PORT }}
-            DB_ADDRESS_ARG=${{ secrets.ADDRESS }}
-            DB_NAME_ARG=${{ secrets.NAME }}
+            DB_PORT_ARG=${{ secrets.DB_PORT }}
+            DB_ADDRESS_ARG=${{ secrets.DB_ADDRESS }}
+            DB_NAME_ARG=${{ secrets.DB_NAME }}
             GMAPS_API_KEY_ARG=${{ secrets.GMAPS_KEY }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
